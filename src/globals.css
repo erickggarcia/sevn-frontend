@@ -1,0 +1,17 @@
+:root {
+    --yellow: #FFBD14;
+    --red: #FF2D2D;
+    --blue: #24538B;
+    --green: #248B28;
+    --grey: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+}
