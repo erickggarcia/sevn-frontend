@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom"
 import { api } from "../../lib/axios"
 import { iArticles } from "../Home"
 import styles from './Article.module.css'
-import {dateTimeFormatter } from "../../ultils/formatter"
+import { dateTimeFormatter } from "../../ultils/formatter"
 import { NavigationContext } from "../../contexts/NavigationContext"
 
 export function SelectedArticle() {
 
-    const {tagColors} = useContext(NavigationContext)
+    const { tagColors } = useContext(NavigationContext)
 
     const [article, setArticle] = useState<iArticles>()
 
@@ -23,7 +23,7 @@ export function SelectedArticle() {
         fetchArticle()
     }, [])
 
-    
+
 
     const formatArticleContent = (content: string) => {
         const formattedContent = content.replace(/'/g, '"')

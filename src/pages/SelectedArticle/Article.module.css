@@ -36,3 +36,35 @@
     display: block;
     margin-top: 1rem;
 }
+
+@media screen and (max-width: 800px) {
+    .articleContainer {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .articleContainer {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .publishedAt {
+        font-size: 0.75rem;
+    }
+
+    .publicity, .article {
+        font-size: 1.25rem;
+    }
+
+    .article {
+        text-align: justify;
+    }
+}
