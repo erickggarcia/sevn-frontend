@@ -3,16 +3,7 @@ import { api } from "../../../../lib/axios"
 import { MainArticles } from "./mainArticles"
 import { SecondaryArticles } from "./secondaryArticles"
 
-type propTags = 'Economia' | 'Educação' | 'Diversidades'
-
-export interface iArticles {
-    id: number
-    tag: propTags
-    photo?: string
-    title: string
-    subtitle: string
-    article: string
-}
+import { iArticles } from "../.."
 
 export function Articles() {
     const [mainArticles, setMainArticles] = useState<iArticles[]>([])

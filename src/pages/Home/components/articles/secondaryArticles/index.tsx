@@ -1,5 +1,5 @@
 import styles from './SecondaryArticles.module.css'
-import { iArticles } from ".."
+import { iArticles } from '../../..'
 
 interface iTagColors {
     Economia: string
