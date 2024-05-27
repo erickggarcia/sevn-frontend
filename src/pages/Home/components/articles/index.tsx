@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { api } from "../../../../lib/axios"
-import styles from './Articles.module.css'
+import { MainArticles } from "./mainArticles"
+import { SecondaryArticles } from "./secondaryArticles"
 
 type propTags = 'Economia' | 'Educação' | 'Diversidades'
 
-interface iArticles {
+export interface iArticles {
     id: number
     tag: propTags
     photo?: string
@@ -15,20 +16,26 @@ interface iArticles {
 
 export function Articles() {
     const [mainArticles, setMainArticles] = useState<iArticles[]>([])
+    const [secondaryArticles, setSecondaryArticles] = useState<iArticles[]>([])
 
     async function fetchMainArticles() {
         const response = await api.get('/articles/mainArticles')
         setMainArticles(response.data)
     }
 
+    async function fetchSecondaryArticles() {
+        const response = await api.get('/articles/secondaryArticles')
+        setSecondaryArticles(response.data)
+    }
+
 
     useEffect(() => {
         fetchMainArticles()
+        fetchSecondaryArticles()
     }, [])
 
     const featuredArticle: iArticles = mainArticles[0]
     const otherHighlightsArticles = mainArticles.slice(1, mainArticles.length)
-    console.log(otherHighlightsArticles)
 
     const tagColors = {
         'Economia': '#FF2D2D',
@@ -37,13 +44,16 @@ export function Articles() {
     }
 
     return (
-        <div>
-            <section>
-                <article>
-                    <span className={styles.tag} style={{ color: tagColors[featuredArticle.tag] }} >{featuredArticle.tag}</span>
-                    <h1 className={styles.title}>{featuredArticle.title}</h1>
-                </article>
-            </section>
-        </div >
+        <div >
+            <MainArticles
+                featuredArticle={featuredArticle}
+                otherHighlightsArticles={otherHighlightsArticles}
+                tagColors={tagColors}
+            />
+            <SecondaryArticles
+                secondaryArticles={secondaryArticles}
+                tagColors={tagColors}
+            />
+        </div>
     )
 }

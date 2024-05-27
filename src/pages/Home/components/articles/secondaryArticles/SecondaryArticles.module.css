@@ -1,0 +1,25 @@
+.SecondaryArticlesContainer {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.secondaryArticles {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.secondaryTitle {
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.separator {
+    width: 7px;
+    height: 100%;
+    border-radius: 100px;
+}
