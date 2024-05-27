@@ -29,7 +29,7 @@ export function Home() {
             fetchMainArticles()
             fetchSecondaryArticles()
             inactiveLoading()
-        }, 3000)
+        }, 1000)
     }, [])
 
     const featuredArticle: iArticles = mainArticles[0]

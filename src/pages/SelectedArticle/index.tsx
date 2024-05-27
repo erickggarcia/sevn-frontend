@@ -26,7 +26,7 @@ export function SelectedArticle() {
         setTimeout(() => {
             fetchArticle()
             inactiveLoading()
-        }, 3000)
+        }, 1000)
     }, [])
 
 
