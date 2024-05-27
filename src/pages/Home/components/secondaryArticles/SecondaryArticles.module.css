@@ -1,6 +1,7 @@
 .SecondaryArticlesContainer {
     margin: 4rem 0;
     display: grid;
+    padding: 0 10rem;
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -27,7 +28,17 @@
     border-radius: 100px;
 }
 
+@media screen and (max-width: 1300px) {
+    .SecondaryArticlesContainer {
+        padding: 0 5rem;
+    }
+}
 
+@media screen and (max-width: 1000px) {
+   .SecondaryArticlesContainer {
+       padding: 1rem;
+   } 
+}
 @media screen and (max-width: 400px) {
     .SecondaryArticlesContainer {
         display: flex;

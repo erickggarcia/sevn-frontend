@@ -1,3 +1,8 @@
+.maxContainer {
+    width: 100vw;
+    padding: 0 10rem;
+}
+
 .mainSectionContainer {
     display: flex;
     gap: 3rem;
@@ -42,9 +47,19 @@
     .featuredArticleTitle {
         font-size: 2.5rem;
     }
+
+    .maxContainer {
+        padding: 0 5rem;
+    }
   }
 
-  @media screen and (max-width: 828px) {
+@media screen and (max-width: 1000px) {
+    .maxContainer {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 828px) {
     .mainSectionContainer {
         flex-direction: column;
         align-items: center;
@@ -74,9 +89,9 @@
         max-width: 80%;
         font-size: 2rem;
     }
-  }
+}
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     .highlightArticles > img {
         display: block;
@@ -85,6 +100,10 @@
 
     .highlighTitle {
         font-size: 1rem;
+    }
+
+    .maxContainer {
+        padding: 0;
     }
 
 }

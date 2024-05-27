@@ -1,8 +1,20 @@
-import { ReactNode, createContext } from "react"
+import { ReactNode, createContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 interface NavigationProviderProps {
     children: ReactNode
+}
+
+export type propTags = 'Economia' | 'Educação' | 'Diversidades'
+
+export interface iArticles {
+    id: number
+    tag: propTags
+    photo?: string
+    title: string
+    subtitle: string
+    article: string
+    createdAt: string
 }
 
 export interface tagColorsProps {
@@ -12,14 +24,26 @@ export interface tagColorsProps {
 }
 
 interface NavigationContextType {
-    setNavigationPath: (id: string) => void
     tagColors: tagColorsProps
+    loading: boolean
+    setNavigationPath: (id: string) => void
+    inactiveLoading: () => void
+    activeLoading: () => void
 }
 
 export const NavigationContext = createContext({} as NavigationContextType)
 
 export function NavigationContextProvider({ children }: NavigationProviderProps) {
+    const [loading, setLoading] = useState<boolean>(true)
     const navigate = useNavigate()
+
+    function inactiveLoading() {
+        setLoading(false)
+    }
+
+    function activeLoading() {
+        setLoading(true)
+    }
 
     const tagColors: tagColorsProps = {
         'Economia': '#FF2D2D',
@@ -32,7 +56,7 @@ export function NavigationContextProvider({ children }: NavigationProviderProps)
     }
 
     return (
-        <NavigationContext.Provider value={{ setNavigationPath, tagColors }}>
+        <NavigationContext.Provider value={{ setNavigationPath, tagColors, loading, inactiveLoading, activeLoading }}>
             {children}
         </NavigationContext.Provider>
     )

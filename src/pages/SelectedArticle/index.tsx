@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../lib/axios"
-import { iArticles } from "../Home"
+import { iArticles } from "../../contexts/NavigationContext"
 import styles from './Article.module.css'
 import { dateTimeFormatter } from "../../ultils/formatter"
 import { NavigationContext } from "../../contexts/NavigationContext"
@@ -10,9 +10,9 @@ import { Loading } from "../../components/Loading"
 export function SelectedArticle() {
 
     const { tagColors } = useContext(NavigationContext)
+    const { loading, activeLoading, inactiveLoading } = useContext(NavigationContext)
 
     const [article, setArticle] = useState<iArticles>()
-    const [loading, setLoading] = useState<boolean>(true)
 
     const { id } = useParams()
 
@@ -22,9 +22,10 @@ export function SelectedArticle() {
     }
 
     useEffect(() => {
+        activeLoading()
         setTimeout(() => {
             fetchArticle()
-            setLoading(false)
+            inactiveLoading()
         }, 3000)
     }, [])
 
