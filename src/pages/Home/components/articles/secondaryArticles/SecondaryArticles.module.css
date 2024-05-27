@@ -7,6 +7,7 @@
 .secondaryArticles {
     display: flex;
     gap: 0.5rem;
+    margin-right: 0.5rem;
     justify-content: center;
     align-items: center;
     margin-top: 0.75rem;

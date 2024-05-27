@@ -1,4 +1,28 @@
 .articleContainer {
     width: 100vw;
-    padding: 0 5rem;
+    padding: 0 20rem;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+}
+
+.tag {
+    font-weight: 700;
+}
+
+.title {
+    font-size: 3.325rem;
+}
+
+.publicity {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--subtitle);
+    font-weight: 400;
+}
+
+.article {
+    line-height: 1.7;
 }

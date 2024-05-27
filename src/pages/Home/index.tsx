@@ -15,8 +15,8 @@ export interface iArticles {
 export function Home() {
     return (
         <div className={styles.homeContainer}>
-            <section className={styles.publicityCard}>
-                <h1 className={styles.publicityTitle}>Publicidade</h1>
+            <section className="publicityCard">
+                <h1 className="publicityTitle">Publicidade</h1>
             </section>
             <Articles />
         </div>
