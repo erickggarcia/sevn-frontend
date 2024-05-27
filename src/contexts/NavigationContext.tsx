@@ -14,11 +14,11 @@ export interface tagColorsProps {
 interface NavigationContextType {
     setNavigationPath: (id: string) => void
     tagColors: tagColorsProps
-  }
+}
 
 export const NavigationContext = createContext({} as NavigationContextType)
 
-export function NavigationContextProvider ({children}: NavigationProviderProps) {
+export function NavigationContextProvider({ children }: NavigationProviderProps) {
     const navigate = useNavigate()
 
     const tagColors: tagColorsProps = {
@@ -31,8 +31,8 @@ export function NavigationContextProvider ({children}: NavigationProviderProps) 
         navigate(`/article/${id}`)
     }
 
-    return(
-        <NavigationContext.Provider value={{setNavigationPath, tagColors}}>
+    return (
+        <NavigationContext.Provider value={{ setNavigationPath, tagColors }}>
             {children}
         </NavigationContext.Provider>
     )
