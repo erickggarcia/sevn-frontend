@@ -1,11 +1,14 @@
 import { BrowserRouter } from 'react-router-dom'
 import './globals.css'
 import { Router } from './Router'
+import { NavigationContextProvider } from './contexts/NavigationContext'
 
 export function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <NavigationContextProvider>
+        <Router />
+      </NavigationContextProvider>
     </BrowserRouter>
   )
 }

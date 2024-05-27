@@ -10,6 +10,7 @@ export interface iArticles {
     title: string
     subtitle: string
     article: string
+    createdAt: string
 }
 
 export function Home() {

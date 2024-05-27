@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom"
 import { api } from "../../lib/axios"
 import { iArticles } from "../Home"
 import styles from './Article.module.css'
+import {dateTimeFormatter } from "../../ultils/formatter"
 
-export function Article() {
+export function SelectedArticle() {
     const [article, setArticle] = useState<iArticles>()
 
     const { id } = useParams()
@@ -43,6 +44,9 @@ export function Article() {
                     <span className={styles.tag} style={{ color: tagColors[article.tag] }}>{article.tag}</span>
                     <h1 className={styles.title}>{article.title}</h1>
                     <h2 className={styles.publicity}>{article.subtitle}</h2>
+                    <span className={styles.publishedAt}>
+                        {dateTimeFormatter.format(new Date(article.createdAt)).replace(',', ' as ')}, por Redação
+                    </span>
                     <section className="publicityCard">
                         <h1 className="publicityTitle">Publicidade</h1>
                     </section>

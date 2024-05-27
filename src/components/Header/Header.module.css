@@ -1,6 +1,19 @@
 .header {
+    position: relative;
     width: 100vw;
     text-align: center;
     padding: 1rem;
     background: var(--yellow);
+}
+
+.navigation{
+    display: none;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.navigation.active {
+    display: block;
 }
