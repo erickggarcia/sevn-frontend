@@ -28,22 +28,14 @@ export function Articles() {
     const featuredArticle: iArticles = mainArticles[0]
     const otherHighlightsArticles = mainArticles.slice(1, mainArticles.length)
 
-    const tagColors = {
-        'Economia': '#FF2D2D',
-        'Educação': '#248B28',
-        'Diversidades': '#24538B'
-    }
-
     return (
         <div >
             <MainArticles
                 featuredArticle={featuredArticle}
                 otherHighlightsArticles={otherHighlightsArticles}
-                tagColors={tagColors}
             />
             <SecondaryArticles
                 secondaryArticles={secondaryArticles}
-                tagColors={tagColors}
             />
         </div>
     )

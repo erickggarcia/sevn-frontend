@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../lib/axios"
 import { iArticles } from "../Home"
 import styles from './Article.module.css'
 import {dateTimeFormatter } from "../../ultils/formatter"
+import { NavigationContext } from "../../contexts/NavigationContext"
 
 export function SelectedArticle() {
+
+    const {tagColors} = useContext(NavigationContext)
+
     const [article, setArticle] = useState<iArticles>()
 
     const { id } = useParams()
@@ -19,11 +23,7 @@ export function SelectedArticle() {
         fetchArticle()
     }, [])
 
-    const tagColors = {
-        'Economia': '#FF2D2D',
-        'Educação': '#248B28',
-        'Diversidades': '#24538B'
-    }
+    
 
     const formatArticleContent = (content: string) => {
         const formattedContent = content.replace(/'/g, '"')

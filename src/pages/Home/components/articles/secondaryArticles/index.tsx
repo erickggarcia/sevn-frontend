@@ -3,20 +3,13 @@ import { iArticles } from '../../..'
 import { useContext } from 'react'
 import { NavigationContext } from '../../../../../contexts/NavigationContext'
 
-interface iTagColors {
-    Economia: string
-    Educação: string
-    Diversidades: string
-}
-
 interface MainArticlesProps {
     secondaryArticles: iArticles[]
-    tagColors: iTagColors
 }
 
-export function SecondaryArticles({ secondaryArticles, tagColors }: MainArticlesProps) {
+export function SecondaryArticles({ secondaryArticles }: MainArticlesProps) {
 
-    const {setNavigationPath} = useContext(NavigationContext)
+    const {tagColors, setNavigationPath} = useContext(NavigationContext)
 
     function handleSelectArticle(event: React.PointerEvent) {
         setNavigationPath(event.currentTarget.id)
